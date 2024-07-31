@@ -2,6 +2,9 @@
 
 This document hopes to be an updated outline of the state of embedding webviews in native [bevy](https://github.com/bevyengine/bevy) applications.
 
+> [!NOTE]
+> If you would like to contribute any information here, feel free to leave an issue or PR.
+
 ## Motivation
 
 Games can often benefit from being able to embed webviews to display online stores, profiles, information boards, or other UI elements.
@@ -26,7 +29,7 @@ This is a list experimental bevy crates which are currently tackling this proble
 
 ## Approaches
 
-[Wry](https://github.com/tauri-apps/wry), a dependency of Tauri, is used in most of the bevy crates currently the tackling webviews.
+[Wry](https://github.com/tauri-apps/wry), a dependency of Tauri, is used in most of the bevy crates currently available.
 Wry's repo includes an example of how to use it with winit where wry is a passed a window handle, and this solution works with a bevy app.
 From testing these solutions, its clear that since wry is designed to take over the window, its common to run into bugs from edge case configurations of OS, GPU, transparency, and window mode.
 
@@ -44,3 +47,5 @@ Since Bevy and Tauri both assume control of the window though, and use different
 [Servo](https://github.com/servo/servo) seems like the perfect library to implement a bevy webview, its cross-platform and includes support for offscreen rendering, but it still has long way to go before supporting the majority of websites. 
 
 [cef-rs](https://github.com/wusyong/cef-rs) is a library I have not seen being used yet, but could be promising as there are several games that use CEF and it supports offscreen rendering.
+
+There are many [Electron/CEF alternatives](https://github.com/sudhakar3697/awesome-electron-alternatives) out in the wild (although not many in pure rust) that could prove to be useful or inspirational.
