@@ -35,8 +35,12 @@ From testing these solutions, its clear that since wry is designed to take over 
 
 **Wry on Windows**
 
-* Wry uses Webview2 which [does not support offscreen rendering](https://github.com/MicrosoftEdge/WebView2Feedback/issues/20) (you cannot render the page to an intermediary texture) which makes it difficult to work around glitchy window interactions.
-* When Webview2 is in focus, it intercepts all of winit's keyboard events making it difficult to choose what inputs are processed in bevy vs in the webview.
+* Wry uses Webview2 which does not support offscreen rendering (you cannot render the page to an intermediary texture) which makes it difficult to work around glitchy window interactions. See:
+  * https://github.com/MicrosoftEdge/WebView2Feedback/issues/20
+  * https://github.com/MicrosoftEdge/WebView2Feedback/issues/547
+* When Webview2 is in focus, it intercepts all of winit's keyboard events making it difficult to choose what inputs are processed in bevy vs in the webview. See:
+  * https://github.com/tauri-apps/wry/issues/902
+  * https://github.com/MicrosoftEdge/WebView2Feedback/issues/468#issuecomment-1016993455
 
 ### Other approaches
 
