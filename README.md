@@ -22,8 +22,8 @@ This is a list experimental bevy crates which are currently tackling this proble
 
 | Crate | Bevy version |
 | --- | --- |
+| [bevy_wry](https://github.com/PawelBis/bevy_wry) | 0.14 |
 | [bevy_flurx_wry](https://github.com/not-elm/bevy_flurx_wry) | 0.13 |
-| [bevy_wry](https://github.com/PawelBis/bevy_wry) | 0.13 |
 | [bevy_wry_webview](https://github.com/hytopiagg/bevy_wry_webview) | 0.12 |
 | [bevy_webview](https://github.com/blaind/bevy_webview) | 0.7 |
 
