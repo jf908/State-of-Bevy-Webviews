@@ -29,8 +29,8 @@ This is a list experimental bevy crates which are currently tackling this proble
 ## Approaches
 
 [Wry](https://github.com/tauri-apps/wry), a dependency of Tauri, is used in most of the bevy crates currently available.
-Wry's repo includes an example of how to use it with winit where wry is a passed a window handle, and this solution works with a bevy app.
-From testing these solutions, its clear that since wry is designed to take over the window, its common to run into bugs from edge case configurations of OS, GPU, transparency, and window mode.
+I have created [an example](https://github.com/jf908/bevy-webview-test) that showcases a minimal example of integrating it into a Bevy app.
+From testing Wry-based solutions, its clear that since wry is designed to take over the window, its common to run into bugs from edge case configurations of OS, GPU, transparency, and window mode.
 
 **Wry on Windows**
 
