@@ -22,9 +22,12 @@ This is a list experimental bevy crates which are currently tackling this proble
 
 | Crate | Bevy version |
 | --- | --- |
-| [bevy_webview_wry](https://github.com/not-elm/bevy_webview_projects) | 0.15 |
-| [bevy_wry](https://github.com/PawelBis/bevy_wry) | 0.14 |
+| [bevy_cef](https://github.com/not-elm/bevy_cef) | 0.16 |
+| [bevy_webview_wry](https://github.com/not-elm/bevy_webview_projects) | 0.16 |
+| [bevy_wry](https://github.com/PawelBis/bevy_wry) | 0.15 |
 | [bevy_webview](https://github.com/blaind/bevy_webview) | 0.7 |
+
+Also see [BevyTauriExample](https://github.com/sunxfancy/BevyTauriExample) for bevy 0.15
 
 ## Approaches
 
@@ -40,6 +43,7 @@ From testing Wry-based solutions, its clear that since wry is designed to take o
 * When Webview2 is in focus, it intercepts all of winit's keyboard events making it difficult to choose what inputs are processed in bevy vs in the webview. See:
   * https://github.com/tauri-apps/wry/issues/902
   * https://github.com/MicrosoftEdge/WebView2Feedback/issues/468#issuecomment-1016993455
+  * **Update**: I believe this is a focus bug in winit, see here [this issue](https://github.com/rust-windowing/winit/issues/4345) and my [workaround](https://github.com/jf908/winit-window-focus-fix).
 
 ### Other approaches
 
@@ -49,6 +53,6 @@ Since Bevy and Tauri both assume control of the window though, and use different
 
 [Servo](https://github.com/servo/servo) seems like the perfect library to implement a bevy webview, its cross-platform and includes support for offscreen rendering, but it still has long way to go before supporting the majority of websites. 
 
-[cef-rs](https://github.com/wusyong/cef-rs)/[webview-rs](https://github.com/mycrl/webview-rs) are libraries I have not seen being used yet, but could be promising as there are several games that use CEF and it supports offscreen rendering. CEF also powers Steam's browser overlay.
+[cef-rs](https://github.com/tauri-apps/cef-rs)/[WEW](https://github.com/mycrl/wew) are libraries that use the Chromium Embedded Framework and could be promising as there are several games that use CEF and it supports offscreen rendering. CEF also powers Steam's browser overlay. bevy_cef uses cef-rs but I've yet to check it out yet.
 
 There are many [Electron/CEF alternatives](https://github.com/sudhakar3697/awesome-electron-alternatives) out in the wild (although not many in pure rust) that could prove to be useful or inspirational.
